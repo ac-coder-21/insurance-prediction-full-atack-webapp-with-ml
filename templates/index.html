@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insurance Quote Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+    }
+    
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    .radio-label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    input[type="radio"] {
+      vertical-align: middle;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    
+    @media (max-width: 600px) {
+      form {
+        padding: 10px;
+      }
+      
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 6px;
+      }
+      
+      .radio-label {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Insurance Quote Form</h2>
+  
+  <form action="http://127.0.0.1:5500/result">
+    <label for="INCOME">Income:</label>
+    <input type="number" id="INCOME" name="INCOME" step="0.01" required>
+    
+    <label for="OCCUPATION">Occupation:</label>
+    <select id="OCCUPATION" name="OCCUPATION" required>
+      <option value="">Select an occupation</option>
+      <option value="Professional">Professional</option>
+      <option value="z_Blue Collar">Blue Collar</option>
+      <option value="Manager">Manager</option>
+      <option value="Clerical">Clerical</option>
+      <option value="Doctor">Doctor</option>
+      <option value="Lawyer">Lawyer</option>
+      <option value="Home Maker">Home Maker</option>
+      <option value="Student">Student</option>
+    </select>
+    
+    <label for="TRAVTIME">Travel Time:</label>
+    <input type="number" id="TRAVTIME" name="TRAVTIME" step="0.01" required>
+
+    <label>Car Use:</label>
+    <span class="radio-label"><input type="radio" id="private" name="CAR_USE" value="Private" required></span>
+    <label for="private" class="radio-label">Private</label>
+    <span class="radio-label"><input type="radio" id="commercial" name="CAR_USE" value="Commercial" required></span>
+    <label for="commercial" class="radio-label">Commercial</label>
+
+    <label for="BLUEBOOK">Bluebook Value:</label>
+    <input type="number" id="BLUEBOOK" name="BLUEBOOK" step="0.01" required>
+    
+    <label for="CAR_TYPE">Car Type:</label>
+    <select id="CAR_TYPE" name="CAR_TYPE" required>
+      <option value="">Select a car type</option>
+      <option value="Minivan">Minivan</option>
+      <option value="Van">Van</option>
+      <option value="z_SUV">SUV</option>
+      <option value="Sports Car">Sports Car</option>
+      <option value="Pickup">Pickup</option>
+      <option value="Panel Truck">Panel Truck</option>
+    </select>
+    
+    
+    <label for="OLDCLAIM">Old Claim Amount:</label>
+    <input type="number" id="OLDCLAIM" name="OLDCLAIM" step="0.01" required>
+    
+    <label for="CLM_FREQ">Claim Frequency:</label>
+    <input type="number" id="CLM_FREQ" name="CLM_FREQ" step="0.01" required>
+    
+    <label>License Revoked:</label>
+    <span class="radio-label"><input type="radio" id="revoked_yes" name="REVOKED" value="Yes" required></span>
+    <label for="revoked_yes" class="radio-label">Yes</label>
+    <span class="radio-label"><input type="radio" id="revoked_no" name="REVOKED" value="No" required></span>
+    <label for="revoked_no" class="radio-label">No</label>
+    
+    <label for="MVR_PTS">MVR Points:</label>
+    <input type="number" id="MVR_PTS" name="MVR_PTS" step="0.01" required>
+    
+    <label for="CLM_AMT">Claim Amount:</label>
+    <input type="number" id="CLM_AMT" name="CLM_AMT" step="0.01" required>
+    
+    <label for="CAR_AGE">Car Age:</label>
+    <input type="number" id="CAR_AGE" name="CAR_AGE" step="0.01" required>
+    
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
